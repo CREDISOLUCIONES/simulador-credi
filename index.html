@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulador Crédito Libranza</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="CREDI-removebg-preview.png" alt="Logo Credisoluciones" class="logo" />
+  </header>
+
+  <h2>Simulador Crédito Libranza</h2>
+
+  <label for="monto">Monto solicitado ($):</label>
+  <input type="number" id="monto" placeholder="Ej: 800000" />
+
+  <label for="plazo">Plazo en quincenas (1 a 8):</label>
+  <input type="number" id="plazo" min="1" max="8" placeholder="Ej: 4" />
+
+  <button onclick="calcularAmortizacion()">Calcular</button>
+
+  <div class="result" id="resumen" style="display:none;"></div>
+  <div class="result" id="tablaAmortizacion" style="display:none;"></div>
+
+  <a href="https://wa.me/573226510387?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20un%20cr%C3%A9dito%20por%20libranza" 
+     class="whatsapp" target="_blank">
+     Contactar por WhatsApp
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
