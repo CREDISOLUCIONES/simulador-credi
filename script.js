@@ -129,3 +129,5 @@ function calcularPrestaciones() {
     <small>*Valores informativos sujetos a validación*</small>
   `;
 }
+document.getElementById("fechaCorte").valueAsDate = new Date();
+
