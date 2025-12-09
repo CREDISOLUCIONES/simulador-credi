@@ -117,7 +117,28 @@ function calcularPrestaciones() {
 
   const montoBase = totalPrestacional * porcentaje;
 
-  document.getElementById("resultadoPrestaciones").innerHTML = `
+  document.getElementById("`
+<div class="result-grid">
+  <div><strong>Días trabajados</strong><span>${dias}</span></div>
+  <div><strong>Cesantías</strong><span>$${cesantias.toLocaleString()}</span></div>
+  <div><strong>Intereses cesantías</strong><span>$${intereses.toLocaleString()}</span></div>
+  <div><strong>Prima</strong><span>$${prima.toLocaleString()}</span></div>
+  <div><strong>Vacaciones</strong><span>$${vacaciones.toLocaleString()}</span></div>
+</div>
+
+<div class="highlight">
+  <p>Total prestacional</p>
+  <h2>$${totalPrestacional.toLocaleString()}</h2>
+</div>
+
+<div class="highlight success">
+  <p>Monto base máximo para crédito</p>
+  <h2>$${montoBase.toLocaleString()}</h2>
+</div>
+
+<small>*Valores informativos sujetos a validación final*</small>
+`
+").innerHTML = `
     <p><strong>Días trabajados:</strong> ${dias}</p>
     <p>Cesantías: $${cesantias.toLocaleString()}</p>
     <p>Intereses cesantías: $${intereses.toLocaleString()}</p>
@@ -130,4 +151,5 @@ function calcularPrestaciones() {
   `;
 }
 document.getElementById("fechaCorte").valueAsDate = new Date();
+
 
