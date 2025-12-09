@@ -92,3 +92,40 @@ function calcularAmortizacion() {
   document.getElementById("tablaAmortizacion").innerHTML = tabla;
   document.getElementById("tablaAmortizacion").style.display = "block";
 }
+
+function calcularPrestaciones() {
+  const salario = Number(document.getElementById("salario").value);
+  const fechaIngreso = new Date(document.getElementById("fechaIngreso").value);
+  const fechaCorte = new Date(document.getElementById("fechaCorte").value);
+  const porcentaje = Number(document.getElementById("porcentaje").value) / 100;
+
+  if (!fechaIngreso || !fechaCorte || fechaIngreso >= fechaCorte) {
+    alert("Verifica correctamente las fechas");
+    return;
+  }
+
+  const dias =
+    Math.floor((fechaCorte - fechaIngreso) / (1000 * 60 * 60 * 24));
+
+  const cesantias = salario * dias / 360;
+  const intereses = cesantias * 0.12 * dias / 360;
+  const prima = salario * dias / 360;
+  const vacaciones = salario * dias / 720;
+
+  const totalPrestacional =
+    cesantias + intereses + prima + vacaciones;
+
+  const montoBase = totalPrestacional * porcentaje;
+
+  document.getElementById("resultadoPrestaciones").innerHTML = `
+    <p><strong>Días trabajados:</strong> ${dias}</p>
+    <p>Cesantías: $${cesantias.toLocaleString()}</p>
+    <p>Intereses cesantías: $${intereses.toLocaleString()}</p>
+    <p>Prima: $${prima.toLocaleString()}</p>
+    <p>Vacaciones: $${vacaciones.toLocaleString()}</p>
+    <hr />
+    <h4>Total prestacional: $${totalPrestacional.toLocaleString()}</h4>
+    <h3>Monto base para crédito: $${montoBase.toLocaleString()}</h3>
+    <small>*Valores informativos sujetos a validación*</small>
+  `;
+}
