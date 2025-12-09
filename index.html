@@ -12,6 +12,28 @@
   </header>
 
   <h2>Simulador CREDISOLUCIONES</h2>
+  <section id="prestacional">
+  <h3>Calculadora Prestacional</h3>
+
+  <label for="salario">Salario mensual ($):</label>
+  <input type="number" id="salario" value="1300000" />
+
+  <label for="fechaIngreso">Fecha de ingreso:</label>
+  <input type="date" id="fechaIngreso" />
+
+  <label for="fechaCorte">Fecha corte:</label>
+  <input type="date" id="fechaCorte" />
+
+  <label for="porcentaje">% financiable:</label>
+  <input type="number" id="porcentaje" value="70" />
+
+  <button onclick="calcularPrestaciones()">Calcular prestaciones</button>
+
+  <div id="resultadoPrestaciones"></div>
+
+  <hr />
+</section>
+
 
   <label for="monto">Monto solicitado ($):</label>
   <input type="number" id="monto" placeholder="Ej: 800000" />
@@ -32,3 +54,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
