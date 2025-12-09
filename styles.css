@@ -86,3 +86,21 @@ header {
 .whatsapp:hover {
   background-color: #1ebc58;
 }
+
+#prestacional {
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+#prestacional input,
+#prestacional button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 6px;
+}
+
+#resultadoPrestaciones {
+  margin-top: 10px;
+}
