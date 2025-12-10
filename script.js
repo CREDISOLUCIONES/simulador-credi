@@ -102,16 +102,16 @@ function calcularAmortizacion() {
     .toLocaleDateString("es-CO");
 
   tabla += `
-    <tr>
-      <td>${i}</td>
-      <td>${fechaPago}</td>
-      <td>$${saldo.toFixed(0).toLocaleString()}</td>
-      <td>$${interes.toFixed(0).toLocaleString()}</td>
-      <td>$${abonoCapital.toFixed(0).toLocaleString()}</td>
-      <td>$${cuota.toFixed(0).toLocaleString()}</td>
-      <td>$${saldoFinal.toFixed(0).toLocaleString()}</td>
-    </tr>
-  `;
+  <tr>
+    <td>${i}</td>
+    <td>${fechaPago}</td>
+    <td>$${saldo.toFixed(0).toLocaleString()}</td>
+    <td>$${interes.toFixed(0).toLocaleString()}</td>
+    <td>$${abonoCapital.toFixed(0).toLocaleString()}</td>
+    <td>$${cuota.toFixed(0).toLocaleString()}</td>
+    <td>$${saldoFinal.toFixed(0).toLocaleString()}</td>
+  </tr>
+`;
 
   saldo = saldoFinal;
 }
@@ -124,6 +124,7 @@ function calcularAmortizacion() {
   tablaDiv.innerHTML = tabla;
   tablaDiv.style.display = "block";
 }
+
 
 
 
