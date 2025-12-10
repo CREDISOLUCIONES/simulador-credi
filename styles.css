@@ -11,7 +11,9 @@ header {
 }
 
 .logo {
-  width: 140px;
+  width: 200px;   /* más grande */
+  height: auto;
+  margin-bottom: 25px;
 }
 
 .card {
@@ -105,6 +107,7 @@ th {
 body {
   background: #f0f5ff !important;
 }
+
 
 
 
