@@ -16,6 +16,21 @@ function obtenerFechaQuincenal(fechaBase, numeroCuota) {
 
   return new Date(anio, mes, dia);
 }
+function calcularFechaPago(numeroCuota) {
+  const hoy = new Date();
+  let dia = hoy.getDate();
+  let mes = hoy.getMonth();
+  let anio = hoy.getFullYear();
+
+  if (dia <= 15) {
+    dia = numeroCuota % 2 === 1 ? 15 : 30;
+  } else {
+    dia = numeroCuota % 2 === 1 ? 30 : 15;
+    if (dia === 15) mes++;
+  }
+
+  return new Date(anio, mes, dia);
+}
 
 function calcularAmortizacion() {
   const monto = parseFloat(document.getElementById("monto").value);
@@ -79,22 +94,28 @@ function calcularAmortizacion() {
   let saldo = montoCredito;
 
   for (let i = 1; i <= plazo; i++) {
-    const interes = saldo * tasa;
-    const abonoCapital = cuota - interes;
-    const saldoFinal = saldo - abonoCapital;
+  const interes = saldo * tasa;
+  const abonoCapital = cuota - interes;
+  const saldoFinal = saldo - abonoCapital;
 
-    tabla += `
-      <tr>
-        <td>${i}</td>
-        <td>$${saldo.toFixed(0).toLocaleString()}</td>
-        <td>$${interes.toFixed(0).toLocaleString()}</td>
-        <td>$${abonoCapital.toFixed(0).toLocaleString()}</td>
-        <td>$${cuota.toFixed(0).toLocaleString()}</td>
-        <td>$${saldoFinal.toFixed(0).toLocaleString()}</td>
-      </tr>
-    `;
+  const fechaPago = calcularFechaPago(i)
+    .toLocaleDateString("es-CO");
 
-    saldo = saldoFinal;
+  tabla += `
+    <tr>
+      <td>${i}</td>
+      <td>${fechaPago}</td>
+      <td>$${saldo.toFixed(0).toLocaleString()}</td>
+      <td>$${interes.toFixed(0).toLocaleString()}</td>
+      <td>$${abonoCapital.toFixed(0).toLocaleString()}</td>
+      <td>$${cuota.toFixed(0).toLocaleString()}</td>
+      <td>$${saldoFinal.toFixed(0).toLocaleString()}</td>
+    </tr>
+  `;
+
+  saldo = saldoFinal;
+}
+
   }
 
   tabla += `</table>`;
@@ -103,6 +124,7 @@ function calcularAmortizacion() {
   tablaDiv.innerHTML = tabla;
   tablaDiv.style.display = "block";
 }
+
 
 
 
