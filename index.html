@@ -4,38 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Simulador CREDISOLUCIONES</title>
-  <<link link rel="stylesheet" href="styles.css" />
->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+
+<div class="container">
 
   <header>
     <img src="CREDI-removebg-preview.png" alt="Logo Credisoluciones" class="logo" />
   </header>
 
-  <div class="card">
-    <h2>Simulador de Crédito</h2>
+  <h2>Simulador de Crédito</h2>
 
-    <label>Monto solicitado ($)</label>
-    <input type="number" id="monto" placeholder="Ej: 800000" />
+  <label>Monto solicitado ($)</label>
+  <input type="number" id="monto" placeholder="Ej: 800000" />
 
-    <label>Plazo en quincenas (1 a 8)</label>
-    <input type="number" id="plazo" min="1" max="8" placeholder="Ej: 4" />
+  <label>Plazo en quincenas (1 a 8)</label>
+  <input type="number" id="plazo" min="1" max="8" placeholder="Ej: 4" />
 
-    <button onclick="calcularAmortizacion()">Calcular crédito</button>
-  </div>
+  <button onclick="calcularAmortizacion()">Calcular crédito</button>
 
-  <div class="result card" id="resumen" style="display:none;"></div>
-  <div class="result card" id="tablaAmortizacion" style="display:none;"></div>
+  <button class="btn-pdf" onclick="generarPDF()">Descargar PDF</button>
 
-  <a href="https://wa.me/573226510387?text=Hola,%20quiero%20información%20sobre%20un%20crédito%20por%20libranza"
-     class="whatsapp" target="_blank">
-     Contactar por WhatsApp
+  <div class="result" id="resumen" style="display:none;"></div>
+
+  <div class="result table-wrapper" id="tablaAmortizacion" style="display:none;"></div>
+
+  <a href="https://wa.me/573226510387?text=Hola,%20quiero%20información%20sobre%20un%20crédito"
+     target="_blank"
+     class="whatsapp">
+     📲 Solicitar crédito por WhatsApp
   </a>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
+
 
 
 
