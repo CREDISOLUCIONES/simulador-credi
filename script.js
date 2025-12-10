@@ -1,3 +1,22 @@
+function obtenerFechaQuincenal(fechaBase, numeroCuota) {
+  const fechaPago = obtenerFechaQuincenal(new Date(), i)
+  .toLocaleDateString("es-CO");
+  const esPrimeraQuincena = fecha.getDate() <= 15;
+
+  let dia;
+  let mes = fecha.getMonth();
+  let anio = fecha.getFullYear();
+
+  if (esPrimeraQuincena) {
+    dia = numeroCuota % 2 === 1 ? 15 : 30;
+  } else {
+    dia = numeroCuota % 2 === 1 ? 30 : 15;
+    if (dia === 15) mes++;
+  }
+
+  return new Date(anio, mes, dia);
+}
+
 function calcularAmortizacion() {
   const monto = parseFloat(document.getElementById("monto").value);
   const plazo = parseInt(document.getElementById("plazo").value);
@@ -82,4 +101,5 @@ function calcularAmortizacion() {
   tablaDiv.innerHTML = tabla;
   tablaDiv.style.display = "block";
 }
+
 
