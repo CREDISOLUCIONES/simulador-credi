@@ -1,100 +1,106 @@
-/* ESTILOS GENERALES */
 body {
   font-family: Arial, sans-serif;
+  background: #f5f7fa;
   padding: 20px;
-  background-color: #f6f9fa;
   color: #333;
 }
 
-/* TÍTULOS */
-h2 {
-  color: #00a9b7;
-  margin-bottom: 20px;
+header {
+  display: flex;
+  justify-content: flex-end;
 }
 
-/* FORMULARIO */
+.logo {
+  width: 140px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+h2, h3 {
+  color: #00a9b7;
+}
+
 label {
   display: block;
-  margin-top: 12px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
 input {
-  width: 220px;
-  padding: 8px;
-  margin-top: 6px;
-  margin-bottom: 15px;
-}
-
-/* BOTÓN PRINCIPAL */
-button {
-  background-color: #00a9b7;
-  color: white;
-  padding: 10px 22px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-button:hover {
-  background-color: #008e9a;
-}
-
-/* RESULTADOS */
-.result {
-  margin-top: 30px;
-  background-color: #ffffff;
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
 }
 
-/* TABLA */
+button {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ff7a18, #ff9f45);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
-th,
-td {
+th, td {
   border: 1px solid #ccc;
-  padding: 8px;
+  padding: 10px;
   text-align: right;
 }
 
 th {
-  background-color: #00a9b7;
+  background: linear-gradient(135deg, #00a9b7, #007d88);
   color: white;
   text-align: center;
 }
 
-/* HEADER Y LOGO */
-header {
+.resumen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.resumen-item {
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 8px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.logo {
-  width: 130px;
-  height: auto;
-  margin-bottom: 20px;
+.resumen-highlight {
+  grid-column: span 2;
+  background: #e6f7f9;
+  border-left: 5px solid #00a9b7;
 }
 
-/* BOTÓN WHATSAPP */
 .whatsapp {
-  display: inline-block;
-  margin-top: 30px;
-  background-color: #25d366;
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  background: linear-gradient(135deg, #25d366, #1ebc58);
   color: white;
-  padding: 12px 22px;
-  border-radius: 6px;
-  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 50px;
   font-weight: bold;
+  text-decoration: none;
 }
 
-.whatsapp:hover {
-  background-color: #1ebc58;
-}
+
