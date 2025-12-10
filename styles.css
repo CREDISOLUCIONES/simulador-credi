@@ -1,3 +1,4 @@
+/* ESTILOS GENERALES */
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -5,36 +6,42 @@ body {
   color: #333;
 }
 
+/* TÍTULOS */
 h2 {
   color: #00a9b7;
   margin-bottom: 20px;
 }
 
+/* FORMULARIO */
 label {
   display: block;
-  margin-top: 10px;
+  margin-top: 12px;
+  font-weight: bold;
 }
 
 input {
-  width: 200px;
+  width: 220px;
   padding: 8px;
-  margin-top: 5px;
+  margin-top: 6px;
   margin-bottom: 15px;
 }
 
+/* BOTÓN PRINCIPAL */
 button {
   background-color: #00a9b7;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 15px;
 }
 
 button:hover {
   background-color: #008e9a;
 }
 
+/* RESULTADOS */
 .result {
   margin-top: 30px;
   background-color: #ffffff;
@@ -43,13 +50,15 @@ button:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* TABLA */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: right;
@@ -58,8 +67,10 @@ th, td {
 th {
   background-color: #00a9b7;
   color: white;
+  text-align: center;
 }
 
+/* HEADER Y LOGO */
 header {
   display: flex;
   justify-content: flex-end;
@@ -72,12 +83,13 @@ header {
   margin-bottom: 20px;
 }
 
+/* BOTÓN WHATSAPP */
 .whatsapp {
   display: inline-block;
   margin-top: 30px;
   background-color: #25d366;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 22px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
@@ -86,66 +98,3 @@ header {
 .whatsapp:hover {
   background-color: #1ebc58;
 }
-
-#prestacional {
-  padding: 15px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-}
-
-#prestacional input,
-#prestacional button {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 6px;
-}
-
-#resultadoPrestaciones {
-  margin-top: 10px;
-}
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fa;
-}
-
-.card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 20px auto;
-}
-
-.card h3 {
-  margin-bottom: 15px;
-  color: #0a2a66;
-}
-
-.result-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.result-grid div {
-  background: #f1f4f9;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.highlight {
-  background: #eef3ff;
-  border-left: 6px solid #0a2a66;
-  padding: 12px;
-  margin-top: 15px;
-  border-radius: 8px;
-}
-
-.highlight.success {
-  background: #e9f8ef;
-  border-left-color: #2ba84a;
-}
-
