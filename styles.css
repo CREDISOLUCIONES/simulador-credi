@@ -1,116 +1,133 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f5f7fa;
+  background: #eef2ff;
+  margin: 0;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
   padding: 20px;
-  color: #333;
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
+  text-align: right;
 }
 
 .logo {
-  width: 200px;   /* más grande */
+  width: 200px;
   height: auto;
-  margin-bottom: 25px;
 }
 
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 20px auto;
+/* TITULOS */
+h2 {
+  text-align: center;
+  color: #1e40af;
+  margin: 20px 0;
 }
 
-h2, h3 {
-  color: #00a9b7;
-}
-
+/* FORMULARIO */
 label {
-  display: block;
   margin-top: 10px;
+  display: block;
   font-weight: bold;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+  padding: 12px;
+  margin-top: 6px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #c7d2fe;
+  font-size: 16px;
 }
 
+/* BOTONES */
 button {
-  margin-top: 20px;
-  background: linear-gradient(135deg, #ff7a18, #ff9f45);
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #2563eb;
   color: white;
-  padding: 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
 }
 
+button:hover {
+  background: #1e40af;
+}
+
+.btn-pdf {
+  background: #0f172a;
+}
+
+.btn-pdf:hover {
+  background: #020617;
+}
+
+/* RESULTADOS */
+.result {
+  margin-top: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* TABLA */
+.table-wrapper {
+  overflow-x: auto;
+}
+
 table {
-  width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  min-width: 900px;
+  width: 100%;
 }
 
 th, td {
-  border: 1px solid #ccc;
+  border: 1px solid #c7d2fe;
   padding: 10px;
-  text-align: right;
-}
-
-th {
-  background: linear-gradient(135deg, #00a9b7, #007d88);
-  color: white;
   text-align: center;
 }
 
-.resumen-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+th {
+  background: #1e40af;
+  color: white;
 }
 
-.resumen-item {
-  background: #f1f5f9;
-  padding: 12px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.resumen-highlight {
-  grid-column: span 2;
-  background: #e6f7f9;
-  border-left: 5px solid #00a9b7;
-}
-
+/* WHATSAPP */
 .whatsapp {
   display: block;
-  width: fit-content;
-  margin: 30px auto;
-  background: linear-gradient(135deg, #25d366, #1ebc58);
+  margin-top: 30px;
+  background: #25d366;
   color: white;
-  padding: 14px 24px;
-  border-radius: 50px;
-  font-weight: bold;
+  text-align: center;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 17px;
   text-decoration: none;
-}
-body {
-  background: #f0f5ff !important;
+  font-weight: bold;
 }
 
+.whatsapp:hover {
+  background: #1ebc58;
+}
 
+/* MOBILE */
+@media (max-width: 600px) {
+  .logo {
+    display: block;
+    margin: auto;
+    width: 170px;
+  }
 
-
-
+  h2 {
+    font-size: 22px;
+  }
+}
 
 
