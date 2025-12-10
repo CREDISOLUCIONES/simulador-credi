@@ -1,7 +1,7 @@
 function calcularAmortizacion() {
   const monto = Number(document.getElementById("monto").value);
   const plazo = Number(document.getElementById("plazo").value);
-  const tasa = 0.018;
+  const tasa = 0.0187;
 
   if (!monto || plazo < 1 || plazo > 8) {
     alert("Verifique monto y plazo (1 a 8 quincenas)");
@@ -91,5 +91,6 @@ function generarPDF() {
 
   doc.save("Simulacion_Credito_Credisoluciones.pdf");
 }
+
 
 
