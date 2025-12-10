@@ -65,12 +65,14 @@ function calcularAmortizacion() {
     <h3>Tabla de Amortización</h3>
     <table border="1" cellpadding="6" cellspacing="0">
       <tr>
-        <th>Cuota</th>
-        <th>Saldo Inicial</th>
-        <th>Interés</th>
-        <th>Abono Capital</th>
-        <th>Cuota</th>
-        <th>Saldo Final</th>
+        <tr>
+  <th>Cuota</th>
+  <th>Fecha de Pago</th>
+  <th>Saldo Inicial</th>
+  <th>Interés</th>
+  <th>Abono Capital</th>
+  <th>Cuota</th>
+  <th>Saldo Final</th>
       </tr>
   `;
 
@@ -101,5 +103,6 @@ function calcularAmortizacion() {
   tablaDiv.innerHTML = tabla;
   tablaDiv.style.display = "block";
 }
+
 
 
