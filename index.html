@@ -6,38 +6,30 @@
   <title>Simulador CREDISOLUCIONES</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+
   <header>
     <img src="CREDI-removebg-preview.png" alt="Logo Credisoluciones" class="logo" />
   </header>
 
-  <h2>Simulador CREDISOLUCIONES</h2>
+  <div class="card">
+    <h2>Simulador de Crédito</h2>
 
-  <hr />
+    <label>Monto solicitado ($)</label>
+    <input type="number" id="monto" placeholder="Ej: 800000" />
 
-  <!-- SIMULADOR DE CRÉDITO -->
-  <label for="monto">Monto solicitado ($):</label>
-  <input type="number" id="monto" placeholder="Ej: 800000" />
+    <label>Plazo en quincenas (1 a 8)</label>
+    <input type="number" id="plazo" min="1" max="8" placeholder="Ej: 4" />
 
-  <label for="plazo">Plazo en quincenas (1 a 8):</label>
-  <input type="number" id="plazo" min="1" max="8" placeholder="Ej: 4" />
+    <button onclick="calcularAmortizacion()">Calcular crédito</button>
+  </div>
 
-  <button type="button" onclick="calcularAmortizacion()">
-    Calcular
-  </button>
+  <div class="result card" id="resumen" style="display:none;"></div>
+  <div class="result card" id="tablaAmortizacion" style="display:none;"></div>
 
-  <!-- RESULTADOS -->
-  <div class="result" id="resumen" style="display:none;"></div>
-  <div class="result" id="tablaAmortizacion" style="display:none;"></div>
-
-  <!-- WHATSAPP -->
-  <a
-    href="https://wa.me/573226510387?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20un%20cr%C3%A9dito%20por%20libranza"
-    class="whatsapp"
-    target="_blank"
-  >
-    Contactar por WhatsApp
+  <a href="https://wa.me/573226510387?text=Hola,%20quiero%20información%20sobre%20un%20crédito%20por%20libranza"
+     class="whatsapp" target="_blank">
+     Contactar por WhatsApp
   </a>
 
   <script src="script.js"></script>
