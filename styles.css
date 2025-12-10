@@ -1,49 +1,40 @@
-/* ===============================
-   BASE
-================================ */
+/* ===== BASE ===== */
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f6f9fa; /* azul suave original */
+  background-color: #f6f9fa;
+  margin: 0;
   color: #333;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
+  padding: 20px;
 }
 
-/* ===============================
-   HEADER / LOGO
-================================ */
+/* ===== LOGO ===== */
 header {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
 }
 
 .logo {
-  width: 190px;   /* ligeramente mayor */
-  height: auto;
+  width: 190px;
   margin-bottom: 20px;
 }
 
-/* ===============================
-   TITULOS
-================================ */
+/* ===== TITULOS ===== */
 h2 {
-  color: #00a9b7;
-  margin-bottom: 20px;
   text-align: center;
+  color: #00a9b7; /* turquesa */
+  margin-bottom: 25px;
 }
 
-/* ===============================
-   FORMULARIO
-================================ */
+/* ===== FORMULARIO ===== */
 label {
-  display: block;
   margin-top: 12px;
-  font-weight: 600; /* + claridad */
+  display: block;
+  font-weight: bold;
 }
 
 input {
@@ -51,59 +42,47 @@ input {
   padding: 10px;
   margin-top: 6px;
   margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #cfe4e7;
-  transition: border-color 0.2s;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
 }
 
-input:focus {
-  outline: none;
-  border-color: #00a9b7;
-}
-
-/* ===============================
-   BOTONES
-================================ */
+/* ===== BOTÓN PRINCIPAL (NARANJA) ===== */
 button {
-  background-color: #00a9b7;
+  width: 100%;
+  background-color: #ff8c00; /* naranja llamativo */
   color: white;
   padding: 12px;
+  font-size: 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  transition: transform 0.1s, box-shadow 0.1s;
 }
 
 button:hover {
-  background-color: #008e9a;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  background-color: #e07a00;
 }
 
+/* ===== BOTÓN PDF ===== */
 .btn-pdf {
-  background-color: #344054; /* sobrio */
+  background-color: #4b5563;
   margin-top: 10px;
 }
 
 .btn-pdf:hover {
-  background-color: #1f2937;
+  background-color: #374151;
 }
 
-/* ===============================
-   RESULTADOS / TARJETAS
-================================ */
+/* ===== TARJETAS ===== */
 .result {
-  margin-top: 30px;
+  margin-top: 25px;
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px; /* + moderno */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* + limpio */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* ===============================
-   TABLA AMORTIZACIÓN
-================================ */
+/* ===== TABLA ===== */
 .table-wrapper {
   overflow-x: auto;
 }
@@ -116,60 +95,42 @@ table {
 }
 
 th, td {
-  border: 1px solid #d1e5ea;
+  border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
-  font-size: 14px;
 }
 
 th {
-  background-color: #00a9b7;
+  background-color: #00a9b7; /* turquesa */
   color: white;
-  position: sticky;
-  top: 0; /* UX en móvil */
 }
 
-/* ===============================
-   WHATSAPP
-================================ */
+/* ===== WHATSAPP ===== */
 .whatsapp {
   display: block;
   margin-top: 30px;
   background-color: #25d366;
   color: white;
   padding: 14px;
-  border-radius: 10px;
-  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: bold;
+  text-decoration: none;
   text-align: center;
-  font-size: 17px;
-  transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .whatsapp:hover {
   background-color: #1ebc58;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* ===============================
-   MOBILE
-================================ */
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
-
   .logo {
-    width: 170px;
+    width: 160px;
     margin: auto;
-    display: block;
   }
 
   h2 {
     font-size: 22px;
-  }
-
-  button,
-  .btn-pdf,
-  .whatsapp {
-    width: 100%;
   }
 }
