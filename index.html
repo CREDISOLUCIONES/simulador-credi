@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulador CREDISOLUCIONES</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador de Crédito</title>
 
+<!-- Iconos modernos -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- ARCHIVO CSS -->
+<link rel="stylesheet" href="styles.css">
+
+</head>
 <body>
+
+<header>
+    <i class="bi bi-calculator"></i> Simulador de Crédito – Credisoluciones
+</header>
 
 <div class="container">
 
-  <header>
-    <img src="CREDI-removebg-preview.png" alt="Logo Credisoluciones" class="logo">
-  </header>
+    <div class="summary-card">
+        <h3><i class="bi bi-wallet2"></i> Datos del crédito</h3>
+        
+        <label>Monto:</label>
+        <input type="number" id="monto" class="input" placeholder="Ej: 5000000">
 
-  <h2>Simulador de Crédito</h2>
+        <label>Interés mensual (%):</label>
+        <input type="number" id="interes" class="input" value="1.87">
 
-  <label for="monto">Monto solicitado ($)</label>
-  <input type="number" id="monto" placeholder="Ej: 800000">
+        <label>Plazo (meses):</label>
+        <input type="number" id="meses" class="input" placeholder="Ej: 12">
 
-  <label for="plazo">Plazo en quincenas (1 a 8)</label>
-  <input type="number" id="plazo" min="1" max="8" placeholder="Ej: 4">
+        <button class="btn-primary" onclick="simular()">Calcular</button>
+    </div>
 
-  <button onclick="calcularAmortizacion()">
-    Calcular crédito
-  </button>
+    <div class="summary-card" id="resultados" style="display:none;">
+        <h3><i class="bi bi-clipboard-check"></i> Resultados</h3>
+        <p><b>Cuota mensual:</b> <span id="cuota"></span></p>
+        <p><b>Total intereses:</b> <span id="totalIntereses"></span></p>
+        <p><b>Total a pagar:</b> <span id="totalPagar"></span></p>
 
-  <button class="btn-pdf" onclick="generarPDF()">
-    Descargar simulación PDF
-  </button>
+        <button class="btn-whatsapp" onclick="enviarWhatsApp()">
+            <i class="bi bi-whatsapp"></i> Enviar por WhatsApp
+        </button>
+    </div>
 
-  <div class="result" id="resumen" style="display:none;"></div>
-
-  <div class="result table-wrapper" id="tablaAmortizacion" style="display:none;"></div>
-
-  <a
-    href="https://wa.me/573226510387?text=Hola,%20quiero%20información%20sobre%20un%20crédito"
-    target="_blank"
-    class="whatsapp"
-  >
-    📲 Solicitar crédito por WhatsApp
-  </a>
+    <div class="table-container" id="tablaBox" style="display:none;">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>Mes</th>
+                    <th>Cuota</th>
+                    <th>Interés</th>
+                    <th>Abono</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- ARCHIVO JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
-
-
-
-
-
 
