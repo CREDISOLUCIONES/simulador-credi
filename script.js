@@ -1,7 +1,7 @@
 function calcularAmortizacion() {
   const monto = parseFloat(document.getElementById("monto").value);
   const plazo = parseInt(document.getElementById("plazo").value);
-  const tasa = 0.018; // 1.80% quincenal
+  const tasa = 0.0187; // 1.80% quincenal
 
   if (isNaN(monto) || isNaN(plazo) || monto <= 0 || plazo < 1 || plazo > 8) {
     alert("Ingrese un monto válido y un plazo entre 1 y 8 quincenas.");
@@ -110,5 +110,6 @@ function calcularAmortizacion() {
   document.getElementById("resumen").innerHTML = resumen;
   document.getElementById("resumen").style.display = "block";
 }
+
 
 
