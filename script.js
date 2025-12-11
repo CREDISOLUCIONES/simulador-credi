@@ -106,3 +106,24 @@ function calcularAmortizacion() {
   document.getElementById("tablaAmortizacion").innerHTML = tabla;
   document.getElementById("tablaAmortizacion").style.display = "block";
 }
+
+
+
+/* ========================================================
+    ⭐ FUNCIÓN PARA DESCARGAR TODO EN PDF ⭐
+======================================================== */
+async function descargarPDF() {
+  const elemento = document.getElementById("contenedorPDF");
+
+  const opt = {
+    margin: 5,
+    filename: "simulacion_credito.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+  };
+
+  await html2pdf().set(opt).from(elemento).save();
+}
+
+
