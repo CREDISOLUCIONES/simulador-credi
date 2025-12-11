@@ -1,136 +1,158 @@
-/* ===== BASE ===== */
+/* --------------------- */
+/*   ESTILO GENERAL     */
+/* --------------------- */
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f9fa;
-  margin: 0;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background: #f0f7ff;
+    margin: 0;
+    padding: 0;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* ===== LOGO ===== */
+/* Encabezado con degradado azul moderno */
 header {
-  display: flex;
-  justify-content: flex-end;
+    background: linear-gradient(90deg, #009ffd 0%, #2a2a72 100%);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
 }
 
-.logo {
-  width: 190px;
-  margin-bottom: 20px;
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* ===== TITULOS ===== */
-h2 {
-  text-align: center;
-  color: #00a9b7; /* turquesa */
-  margin-bottom: 25px;
+/* --------------------- */
+/*     TARJETAS (cards) */
+/* --------------------- */
+
+.summary-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #009ffd;
+    margin-bottom: 20px;
+    transition: .3s;
 }
 
-/* ===== FORMULARIO ===== */
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
 label {
-  margin-top: 12px;
-  display: block;
-  font-weight: bold;
+    display: block;
+    margin-top: 10px;
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 15px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
 }
 
-/* ===== BOTÓN PRINCIPAL (NARANJA) ===== */
-button {
-  width: 100%;
-  background-color: #ff8c00; /* naranja llamativo */
-  color: white;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+/* --------------------- */
+/*          BOTONES      */
+/* --------------------- */
+
+.btn-primary {
+    background: #FF7A00;
+    padding: 14px 22px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
-button:hover {
-  background-color: #e07a00;
+.btn-primary:hover {
+    background: #d96a00;
+    transform: scale(1.03);
 }
 
-/* ===== BOTÓN PDF ===== */
-.btn-pdf {
-  background-color: #4b5563;
-  margin-top: 10px;
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    transition: .3s;
 }
 
-.btn-pdf:hover {
-  background-color: #374151;
+.btn-whatsapp:hover {
+    background: #1ebe5b;
+    transform: translateY(-3px);
 }
 
-/* ===== TARJETAS ===== */
-.result {
-  margin-top: 25px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+/* --------------------- */
+/*      TABLA ESTILO     */
+/* --------------------- */
 
-/* ===== TABLA ===== */
-.table-wrapper {
-  overflow-x: auto;
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-top: 25px;
 }
 
 table {
-  width: 100%;
-  min-width: 900px;
-  border-collapse: collapse;
-  margin-top: 15px;
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead tr {
+    background: linear-gradient(90deg, #005bea 0%, #00c6fb 100%);
+    color: white;
+    text-align: center;
+    font-size: 16px;
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
 }
 
-th {
-  background-color: #00a9b7; /* turquesa */
-  color: white;
+tbody tr:nth-child(even) {
+    background: #f3faff;
 }
 
-/* ===== WHATSAPP ===== */
-.whatsapp {
-  display: block;
-  margin-top: 30px;
-  background-color: #25d366;
-  color: white;
-  padding: 14px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
+/* --------------------- */
+/*  RESPONSIVE MÓVIL     */
+/* --------------------- */
+
+@media(max-width: 600px) {
+    header {
+        font-size: 18px;
+    }
+
+    .btn-primary,
+    .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 
-.whatsapp:hover {
-  background-color: #1ebc58;
-}
 
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-  .logo {
-    width: 160px;
-    margin: auto;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-}
