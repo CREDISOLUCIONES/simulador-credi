@@ -1,90 +1,138 @@
+/* ===== BASE ===== */
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
   background-color: #f6f9fa;
+  margin: 0;
   color: #333;
 }
 
-h2 {
-  color: #00a9b7;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===== LOGO ===== */
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 190px;
   margin-bottom: 20px;
 }
 
+/* ===== TITULOS ===== */
+h2 {
+  text-align: center;
+  color: #00a9b7; /* turquesa */
+  margin-bottom: 25px;
+}
+
+/* ===== FORMULARIO ===== */
 label {
+  margin-top: 12px;
   display: block;
-  margin-top: 10px;
+  font-weight: bold;
 }
 
 input {
-  width: 200px;
-  padding: 8px;
-  margin-top: 5px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
   margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
 }
 
+/* ===== BOTÓN PRINCIPAL (NARANJA) ===== */
 button {
-  background-color: #ff8c00;
+  width: 100%;
+  background-color: #ff8c00; /* naranja llamativo */
   color: white;
-  padding: 10px 20px;
+  padding: 12px;
+  font-size: 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
 }
 
 button:hover {
   background-color: #e07a00;
 }
 
+/* ===== BOTÓN PDF ===== */
+.btn-pdf {
+  background-color: #4b5563;
+  margin-top: 10px;
+}
+
+.btn-pdf:hover {
+  background-color: #374151;
+}
+
+/* ===== TARJETAS ===== */
 .result {
-  margin-top: 30px;
+  margin-top: 25px;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* ===== TABLA ===== */
+.table-wrapper {
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
+  min-width: 900px;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
 th, td {
   border: 1px solid #ccc;
-  padding: 8px;
-  text-align: right;
+  padding: 10px;
+  text-align: center;
 }
 
 th {
-  background-color: #00a9b7;
+  background-color: #00a9b7; /* turquesa */
   color: white;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  width: 160px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
+/* ===== WHATSAPP ===== */
 .whatsapp {
-  display: inline-block;
+  display: block;
   margin-top: 30px;
   background-color: #25d366;
   color: white;
-  padding: 12px 22px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 14px;
+  border-radius: 8px;
   font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 }
 
 .whatsapp:hover {
   background-color: #1ebc58;
 }
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .logo {
+    width: 160px;
+    margin: auto;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+ 
