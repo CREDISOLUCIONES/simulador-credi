@@ -1,115 +1,57 @@
-function calcularAmortizacion() {
-  const monto = parseFloat(document.getElementById("monto").value);
-  const plazo = parseInt(document.getElementById("plazo").value);
-  const tasa = 0.0187; // 1.80% quincenal
+function simular() {
 
-  if (isNaN(monto) || isNaN(plazo) || monto <= 0 || plazo < 1 || plazo > 8) {
-    alert("Ingrese un monto válido y un plazo entre 1 y 8 quincenas.");
-    return;
-  }
+    let monto = parseFloat(document.getElementById("monto").value);
+    let interes = parseFloat(document.getElementById("interes").value) / 100; // 1.87% por defecto ya viene en el HTML
+    let meses = parseInt(document.getElementById("meses").value);
 
-  // Calcular cuota de administración
-  let administracion = 0;
-  if (monto <= 499999) {
-    administracion = 119990;
-  } else if (monto <= 999999) {
-    administracion = 149990;
-  } else if (monto <= 5000000) {
-    administracion = 179990;
-  } else {
-    alert("El monto solicitado excede el límite permitido (máx. $5.000.000).");
-    return;
-  }
+    let cuota = (monto * interes) / (1 - Math.pow(1 + interes, -meses));
+    let saldo = monto;
 
-  const montoCredito = monto + administracion;
+    let totalIntereses = 0;
 
-  // Calcular cuota fija
-  const cuota = (montoCredito * tasa) / (1 - Math.pow(1 + tasa, -plazo));
+    let tbody = document.querySelector("#tabla tbody");
+    tbody.innerHTML = "";
 
-  // ---------------------------------------------
-  //  SUMATORIA DE INTERESES REALES (CORREGIDO)
-  // ---------------------------------------------
-  let totalIntereses = 0;
+    for (let i = 1; i <= meses; i++) {
+        let interesPago = saldo * interes;
+        let abono = cuota - interesPago;
+        saldo -= abono;
 
-  // ---------------------------------------------
-  //  TABLA DE AMORTIZACIÓN
-  // ---------------------------------------------
-  let tabla = `
-    <h3>Tabla de Amortización</h3>
-    <table>
-      <tr>
-        <th>Fecha</th>
-        <th>Quincena</th>
-        <th>Saldo Inicial</th>
-        <th>Cuota</th>
-        <th>Interés</th>
-        <th>Abono a Capital</th>
-        <th>Saldo Final</th>
-      </tr>
-  `;
+        totalIntereses += interesPago;
 
-  let saldo = montoCredito;
-  let fecha = new Date();
-
-  for (let i = 1; i <= plazo; i++) {
-    const interes = saldo * tasa;
-    const abonoCapital = cuota - interes;
-    const saldoFinal = saldo - abonoCapital;
-
-    // Acumular intereses reales
-    totalIntereses += interes;
-
-    // Calcular fecha quincenal (15/30)
-    const dia = fecha.getDate() <= 15 ? 15 : 30;
-    fecha.setDate(dia);
-    const fechaPago = fecha.toLocaleDateString('es-CO');
-
-    if (dia === 15) fecha.setDate(30);
-    else {
-      fecha.setMonth(fecha.getMonth() + 1);
-      fecha.setDate(15);
+        tbody.innerHTML += `
+            <tr>
+                <td>${i}</td>
+                <td>${cuota.toFixed(0)}</td>
+                <td>${interesPago.toFixed(0)}</td>
+                <td>${abono.toFixed(0)}</td>
+                <td>${saldo.toFixed(0)}</td>
+            </tr>
+        `;
     }
 
-    tabla += `
-      <tr>
-        <td>${fechaPago}</td>
-        <td>${i}</td>
-        <td>$${saldo.toFixed(0).toLocaleString()}</td>
-        <td>$${cuota.toFixed(0).toLocaleString()}</td>
-        <td>$${interes.toFixed(0).toLocaleString()}</td>
-        <td>$${abonoCapital.toFixed(0).toLocaleString()}</td>
-        <td>$${saldoFinal.toFixed(0).toLocaleString()}</td>
-      </tr>
-    `;
+    document.getElementById("cuota").innerText = cuota.toFixed(0);
+    document.getElementById("totalIntereses").innerText = totalIntereses.toFixed(0);
+    document.getElementById("totalPagar").innerText = (monto + totalIntereses).toFixed(0);
 
-    saldo = saldoFinal;
-  }
-
-  tabla += `</table>`;
-  document.getElementById("tablaAmortizacion").innerHTML = tabla;
-  document.getElementById("tablaAmortizacion").style.display = "block";
-
-  // ---------------------------------------------
-  //  RESUMEN CORREGIDO CON INTERESES REALES
-  // ---------------------------------------------
-  const resumen = `
-    <h3>Resumen del Crédito</h3>
-
-    <p><strong>Monto solicitado:</strong> $${monto.toLocaleString()}</p>
-    <p><strong>Cuota de administración:</strong> $${administracion.toLocaleString()}</p>
-    <p><strong>Plazo:</strong> ${plazo} quincenas</p>
-    <p><strong>Monto total del crédito:</strong> $${montoCredito.toLocaleString()}</p>
-
-    <p><strong>Intereses totales:</strong> $${totalIntereses.toFixed(0).toLocaleString()}</p>
-
-    <p><strong>Total a pagar:</strong> 
-      $${(montoCredito + totalIntereses).toFixed(0).toLocaleString()}
-    </p>
-  `;
-
-  document.getElementById("resumen").innerHTML = resumen;
-  document.getElementById("resumen").style.display = "block";
+    document.getElementById("resultados").style.display = "block";
+    document.getElementById("tablaBox").style.display = "block";
 }
+
+function enviarWhatsApp() {
+    let cuota = document.getElementById("cuota").innerText;
+    let intereses = document.getElementById("totalIntereses").innerText;
+    let total = document.getElementById("totalPagar").innerText;
+
+    let mensaje = `Simulación de crédito:%0A
+Cuota mensual: ${cuota}%0A
+Total intereses: ${intereses}%0A
+Total a pagar: ${total}`;
+
+    window.open(`https://wa.me/?text=${mensaje}`, "_blank");
+}
+
+
 
 
 
